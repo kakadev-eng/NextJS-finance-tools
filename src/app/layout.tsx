@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
@@ -14,13 +14,10 @@ export const metadata: Metadata = {
   },
   description:
     "Financial calculators, stock prices, crypto tools and market insights.",
-  metadataBase: new URL(
-    "https://finance-tools.vercel.app"
-  ),
+  metadataBase: new URL("https://finance-tools.vercel.app"),
   openGraph: {
     title: "FinanceTools",
-    description:
-      "Financial calculators and market tools.",
+    description: "Financial calculators and market tools.",
     siteName: "FinanceTools",
     locale: "en_US",
     type: "website",
@@ -28,8 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FinanceTools",
-    description:
-      "Financial calculators and market tools.",
+    description: "Financial calculators and market tools.",
   },
 };
 
@@ -39,11 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en"suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-zinc-950 text-white">
         <Navbar />
 
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );
