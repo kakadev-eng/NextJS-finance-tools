@@ -54,7 +54,7 @@ export default async function Home() {
   return (
     <main className="mx-auto max-w-7xl p-8">
       <section className="mb-16">
-        <AdBanner />
+        <AdBanner adSlot="4716756193"/>
         <h1 className="mb-4 text-7xl font-bold leading-tight">
           Smart Finance Tools
         </h1>
