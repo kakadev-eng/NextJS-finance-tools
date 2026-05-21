@@ -1,31 +1,61 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   verification: {
-    google: "ixh4gTcuthKwTSscSVEekkWmEyju3IgCzmy50dq6WxI",
+    google:
+      "ixh4gTcuthKwTSscSVEekkWmEyju3IgCzmy50dq6WxI",
   },
+
   title: {
     default: "FinanceTools",
     template: "%s | FinanceTools",
   },
+
   description:
     "Financial calculators, stock prices, crypto tools and market insights.",
-  metadataBase: new URL("https://finance-tools.vercel.app"),
+
+  keywords: [
+    "finance",
+    "stocks",
+    "crypto",
+    "bitcoin",
+    "investing",
+    "financial calculators",
+    "compound interest",
+  ],
+
+  metadataBase: new URL(
+    "https://finance-tools.vercel.app"
+  ),
+
   openGraph: {
     title: "FinanceTools",
-    description: "Financial calculators and market tools.",
+
+    description:
+      "Financial calculators and market tools.",
+
+    url: "https://finance-tools.vercel.app",
+
     siteName: "FinanceTools",
+
     locale: "en_US",
+
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
+
     title: "FinanceTools",
-    description: "Financial calculators and market tools.",
+
+    description:
+      "Financial calculators and market tools.",
   },
 };
 
@@ -40,7 +70,9 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <Footer />
         <GoogleAnalytics />
+        <GoogleAdSense />
       </body>
     </html>
   );
